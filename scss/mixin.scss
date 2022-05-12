@@ -1,0 +1,8 @@
+@mixin include-local-font($fontFamily, $fontFile, $fontWidth, $fontStyle) {
+  @font-face {
+    font-family: $fontFamily;
+    src: url('../fonts/#{$fontFile}.ttf') format('truetype');
+    font-weight: $fontWidth;
+    font-style: $fontStyle;
+  }
+}

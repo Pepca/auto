@@ -1,0 +1,138 @@
+.product-filers {
+  &__controls {
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    button {
+      font-size: 27px;
+
+      background-color: rgba(white, .8);
+
+      transition: background-color .3s ease;
+
+      @media screen and (min-width: 991.98px) {
+        &:hover {
+          background-color: white;
+        }
+      }
+    }
+  }
+}
+
+.item-product-filters {
+  width: 400px;
+
+  color: black;
+
+  &:first-child {
+    .item-product-filters__head {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid black;
+  }
+
+  &:last-child {
+    &._hide-filter .item-product-filters__head {
+      border-bottom-right-radius: 12px;
+      border-bottom-left-radius: 12px;
+    }
+
+    .item-product-filters__body {
+      border-bottom-right-radius: 12px;
+      border-bottom-left-radius: 12px;
+    }
+  }
+
+  &__head {
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 20px;
+
+    background-color: white;
+
+    border-bottom: 1px solid black;
+
+    transition: border-radius .2s ease, background-color .2s ease;
+
+    ._hide-filter & {
+      background-color: rgba(white, .8);
+    }
+
+    @media screen and (min-width: 991.98px) {
+      &:hover {
+        background-color: white;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 30px;
+  }
+
+  &__icon {
+    font-size: 30px;
+
+    transform: rotate(180deg);
+
+    transition: transform .3s ease;
+
+    ._hide-filter & {
+      transform: rotate(0deg);
+    }
+  }
+
+  &__body {
+    background-color: white;
+    height: var(--body-height);
+
+    transition: opacity .2s ease, visibility .2s ease, height .3s ease;
+
+    ._hide-filter & {
+      opacity: 0;
+      visibility: hidden;
+
+      height: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    padding: 20px;
+  }
+
+  &__item {
+
+    font-size: 30px;
+
+    input {
+      cursor: pointer;
+
+      width: 20px;
+      height: 20px;
+    }
+
+    label {
+      cursor: pointer;
+
+      margin-left: 10px;
+    }
+  }
+}

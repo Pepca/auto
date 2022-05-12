@@ -1,0 +1,24 @@
+.catalog {
+  margin: 100px 0 150px;
+
+  &__title {
+    margin-bottom: 70px;
+  }
+
+  &__inner {
+    display: flex;
+
+    gap: 30px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 20px;
+  }
+}
+
+@import "filters";
+@import "product-item";

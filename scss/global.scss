@@ -1,0 +1,80 @@
+@import 'libs';
+@import 'vars';
+@import "fonts";
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--primary-dark-color-hsl);
+  color: white;
+
+  font-family: 'Montserrat', sans-serif;
+}
+
+button {
+  background-color: transparent;
+
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+
+  color: inherit;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+._container {
+  max-width: 1530px;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+
+.section-title {
+  font-size: 55px;
+  font-weight: 500;
+
+  text-align: center;
+}
+
+.btn {
+  cursor: pointer;
+
+  font-size: 30px;
+
+  background-color: white;
+
+  color: black;
+
+  padding: 10px 20px;
+
+  border-radius: 40px;
+  border: none;
+}
+
+.section-block {
+  margin: 100px 0;
+}
+
+@import "modules/header.scss";
+@import "modules/footer.scss";

@@ -1,0 +1,6 @@
+:root {
+  --base-default-color: 0, 0%;
+
+  --primary-dark-color-hsl: hsl(var(--base-default-color), 15%);
+  --secondary-dark-color-hsl: hsl(var(--base-default-color), 10%)
+}

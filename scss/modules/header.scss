@@ -1,0 +1,280 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  width: 100%;
+
+  background-color: var(--primary-dark-color-hsl);
+
+  transition: background-color .3s ease, box-shadow .3s ease;
+
+  &:after {
+    content: '';
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: white;
+
+    transform: scale(0);
+
+    transition: transform .3s ease;
+  }
+
+  &._bg {
+    background-color: transparent;
+
+    &._recolor {
+      background-color: var(--primary-dark-color-hsl);
+
+      box-shadow: 0 10px 15px rgba(black, .4);
+
+      &:after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__inner {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    &:after {
+      content: '';
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 100%;
+      height: 2px;
+
+      background-color: white;
+
+      transition: transform .3s ease;
+    }
+
+    ._recolor & {
+      &:after {
+        transform: scale(0);
+      }
+    }
+
+  }
+
+  &__logo {
+    a {
+      color: white;
+
+      font-size: 30px;
+    }
+  }
+}
+
+.nav-header {
+  &__list {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+  }
+
+  &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      > a {
+        &:after {
+          content: "";
+
+          position: absolute;
+          bottom: 15px;
+          left: 0;
+
+          width: 100%;
+          height: 1px;
+
+          background-color: white;
+
+          transform: scale(0);
+
+          transition: transform 0.2s ease;
+        }
+
+        @media screen and (min-width: 991.98px) {
+          &:hover {
+            &:after {
+              transform: scale(1);
+            }
+          }
+        }
+
+      }
+    }
+
+
+    > a {
+      position: relative;
+
+      display: block;
+
+      color: white;
+
+      padding: 20px 0;
+
+      font-size: 25px;
+
+    }
+
+    &:last-child {
+      > a i {
+        font-size: 30px;
+      }
+    }
+
+
+    ._white & {
+      > a {
+        color: white;
+
+        &:after {
+          background-color: white;
+        }
+      }
+    }
+  }
+}
+
+.submenu-item-nav {
+  position: absolute;
+  top: calc(100% + 2px);
+  right: 0;
+
+  min-width: 100%;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(20px);
+
+  box-shadow: 0 10px 15px rgba(black, 0.4);
+
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+
+  &._active-submenu {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    padding: 20px;
+
+    background-color: rgba(white, .9);
+
+    border: 1px solid black;
+
+    border-top: none;
+
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  &__item {
+    button {
+      background-color: white;
+
+      width: 100%;
+
+      padding: 0;
+
+      //border: 3px solid black;
+      border-radius: 40px;
+
+      box-shadow: 2px 5px 10px rgba(black, .2);
+
+      transition: box-shadow .3s ease;
+
+      a {
+        display: block;
+
+        color: black;
+
+        font-size: 20px;
+
+        padding: 10px 15px;
+
+      }
+
+      //@media screen and (min-width: 991.98px) {
+      //  &:hover {
+      //    box-shadow: 2px 5px 10px rgba(black, .2);
+      //
+      //  }
+      //}
+    }
+  }
+}
+
+.profile-submenu {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 10px;
+
+  &:after {
+    content: "";
+
+    display: block;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: black;
+
+    margin-top: 20px;
+  }
+
+  &__avatar {
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    background-color: hsl(var(--base-default-color), 35%);
+
+    a {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__name {
+    color: black;
+
+    font-size: 25px;
+  }
+}

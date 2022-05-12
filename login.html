@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles/style.css"/>
+  <link rel="stylesheet" href="styles/auth.css">
+  <script src="script.js" defer></script>
+  <title>Document</title>
+</head>
+<body>
+<div class="wrapper">
+  <header class="header">
+    <div class="header__inner _container">
+      <div class="header__logo"><a href="index.html">Logo</a></div>
+      <nav class="header__nav nav-header">
+        <ul class="nav-header__list">
+          <li class="nav-header__item">
+            <a href="#">Филиалы</a>
+          </li>
+          <li class="nav-header__item">
+            <a href="#">Бронирование</a>
+          </li>
+          <li
+              class="nav-header__item item-nav-header _profile-submenu-target"
+          >
+            <a href="#"><i class="fa-solid fa-user"></i></a>
+            <div
+                class="
+                    item-nav-header__submenu
+                    submenu-item-nav
+                    _profile-submenu
+                  "
+            >
+              <ul class="submenu-item-nav__list">
+                <li class="submenu-item-nav__item item-submenu-nav">
+                  <div class="item-submenu-nav__profile profile-submenu">
+                    <div class="profile-submenu__avatar">
+                      <a href="#"></a>
+                    </div>
+                    <div class="profile-submenu__name">Гость</div>
+                  </div>
+                </li>
+                <li class="submenu-item-nav__item">
+                  <button class="btn" type="button">
+                    <a href="login.html">Войти</a>
+                  </button>
+                </li>
+                <li class="submenu-item-nav__item">
+                  <button class="btn" type="button">
+                    <a href="register.html">Регистрация</a>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="auth">
+    <div class="auth__inner _container">
+      <div class="auth__title">Авторизация</div>
+      <form action="/" class="auth__form form-auth">
+        <ul class="form-auth__list">
+          <li class="form-auth__item item-auth-form">
+            <div class="input-block">
+              <ul class="input-block__list">
+                <li class="input-block__item">
+                  <label for="tel" class="input-block__label">Номер телефона</label>
+                  <input type="tel" class="item-auth-form__input input-block__target" name="tel" id="tel">
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="form-auth__item item-auth-form">
+            <div class="input-block">
+              <ul class="input-block__list">
+                <li class="input-block__item">
+                  <label for="password" class="input-block__label">Пароль</label>
+                  <input type="password" class="item-auth-form__input input-block__target" name="password"
+                         id="password">
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <button type="submit" class="btn form-auth__btn">Войти</button>
+      </form>
+    </div>
+  </section>
+  <footer class="footer" id="footer">
+    <div class="footer__inner _container">
+      <nav class="footer__nav nav-footer">
+        <ul class="nav-footer__list">
+          <li class="nav-footer__item">
+            <a href="index.html">Главная</a>
+          </li>
+          <li class="nav-footer__item">
+            <a href="#">Филиалы</a>
+          </li>
+          <li class="nav-footer__item">
+            <a href="#">Бронирование</a>
+          </li>
+          <li class="nav-footer__item">
+            <a href="#">Личный кабинет</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="footer__tel">
+        <span>Контактный номер телефона:</span>
+        <a href="tel:88005553535">8 (800) 555-35-35</a>
+      </div>
+    </div>
+  </footer>
+  <!--  <iframe-->
+  <!--      src="https://yandex.ru/map-widget/v1/?um=constructor%3Aae45f67dcde779cf2f1975f32d610c36f2598b9cc75c2610d0dd1fd6592dbbeb&amp;source=constructor" width="1000" height="900" frameborder="0"></iframe>-->
+</div>
+</body>
+</html>

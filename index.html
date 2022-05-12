@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles/style.css"/>
+  <link rel="stylesheet" href="styles/home.css"/>
+  <script src="script.js" defer></script>
+  <title>Document</title>
+</head>
+<body>
+<div class="wrapper">
+  <header class="header _white _bg">
+    <div class="header__inner _container">
+      <div class="header__logo"><a href="index.html">Logo</a></div>
+      <nav class="header__nav nav-header">
+        <ul class="nav-header__list">
+          <li class="nav-header__item">
+            <a href="#">Филиалы</a>
+          </li>
+          <li class="nav-header__item">
+            <a href="#">Бронирование</a>
+          </li>
+          <li
+              class="nav-header__item item-nav-header _profile-submenu-target"
+          >
+            <a href="#"><i class="fa-solid fa-user"></i></a>
+            <div
+                class="
+                    item-nav-header__submenu
+                    submenu-item-nav
+                    _profile-submenu
+                  "
+            >
+              <ul class="submenu-item-nav__list">
+                <li class="submenu-item-nav__item item-submenu-nav">
+                  <div class="item-submenu-nav__profile profile-submenu">
+                    <div class="profile-submenu__avatar">
+                      <a href="#"></a>
+                    </div>
+                    <div class="profile-submenu__name">Гость</div>
+                  </div>
+                </li>
+                <li class="submenu-item-nav__item">
+                  <button class="btn" type="button">
+                    <a href="login.html">Войти</a>
+                  </button>
+                </li>
+                <li class="submenu-item-nav__item">
+                  <button class="btn" type="button">
+                    <a href="register.html">Регистрация</a>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="intro">
+    <div class="intro__inner _container">
+      <div class="intro__title">Найти автомобиль мечты</div>
+      <form class="intro__form form-intro">
+        <div class="form-intro__search _with-icon">
+          <div class="input-block">
+            <ul class="input-block__list">
+              <li class="input-block__item">
+                <button type="button" class="input-block__icon">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <label for="search" class="input-block__label">Поиск</label>
+                <input type="text" name="search" id="search" class="input-block__target">
+              </li>
+            </ul>
+          </div>
+        </div>
+        <button type="submit" class="btn form-intro__btn">Найти</button>
+      </form>
+      <nav class="intro__nav nav-intro">
+        <ul class="nav-intro__list">
+          <li class="nav-intro__item" data-scroll-anim="news">Новости</li>
+          <li class="nav-intro__item" data-scroll-anim="catalog">Каталог</li>
+          <li class="nav-intro__item" data-scroll-anim="footer">Контактная информация</li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <section class="news section-block" id="news">
+    <div class="news__inner _container">
+      <div class="news__title section-title">
+        Новости
+      </div>
+      <ul class="news__list">
+        <li class="news__item item-news">
+          <div class="item-news__picture"></div>
+          <div class="item-news__content content-item-news">
+            <h3 class="content-item-news__title">В России вынесли первый приговор за продажу аккаунтов каршеринга</h3>
+            <p class="content-item-news__text">В конце 2020 года в России вынесли первый приговор за продажу аккаунтов
+              каршеринга. Приморский районный суд Петербурга оштрафовал гражданина РФ Романа Амелина на 50 тыс. рублей.
+              Как сообщает РАПСИ со ссылкой на Объединенную пресс-службу судов Петербурга, 21-летний молодой человек
+              обвинялся по части 2 статьи 272 УК РФ (неправомерный доступ к компьютерной информации, совершенный из
+              корыстной заинтересованности).</p>
+            <div class="content-item-news__btn">
+              <button type="button" class="btn">Посмотреть</button>
+            </div>
+          </div>
+        </li>
+        <li class="news__item item-news">
+          <div class="item-news__picture"></div>
+          <div class="item-news__content content-item-news">
+            <h3 class="content-item-news__title">Программа поддержки каршеринга не заработала из-за российского
+              телематического оборудования</h3>
+            <p class="content-item-news__text">25 августа 2020 года стало известно о том, что программа поддержки
+              каршеринга, которая была анонсирована ещё в апреле на совещании у президента РФ Владимира Путина, так и не
+              заработала.
+            </p>
+            <div class="content-item-news__btn">
+              <button type="button" class="btn">Посмотреть</button>
+            </div>
+          </div>
+        </li>
+        <li class="news__item item-news">
+          <div class="item-news__picture"></div>
+          <div class="item-news__content content-item-news">
+            <h3 class="content-item-news__title">Мошенничество с данными клиентов</h3>
+            <p class="content-item-news__text">По сообщениям на июль 2020 г каршеринг становится отличным помощником
+              для мошенников. С помощью селфи клиентов с паспортом на людей берут кредиты в микрофинансовых компаниях.
+              Также базы каршерингов используют для звонков из фальшивой службы безопасности банков - так можно узнать
+              наличие денег на счёте, данные банковских карт.</p>
+            <div class="content-item-news__btn">
+              <button type="button" class="btn">Посмотреть</button>
+            </div>
+          </div>
+        </li>
+        <li class="news__item item-news">
+          <div class="item-news__picture"></div>
+          <div class="item-news__content content-item-news">
+            <h3 class="content-item-news__title">Столичный каршеринг обвинил Роспотребнадзор в блокировке деятельности.
+              Новые правила операторам объяснять не спешат</h3>
+            <p class="content-item-news__text">Каршеринг не может возобновить работу по докоронавирусному сценарию из-за
+              отсутствия предписаний Роспотребнадзора. Представители сервисов обвинили ведомство в блокировке их
+              деятельности и 9 июня направили коллективное обращение.</p>
+            <div class="content-item-news__btn">
+              <button type="button" class="btn">Посмотреть</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="catalog section-block" id="catalog">
+    <div class="catalog__title section-title">
+      Каталог
+    </div>
+    <div class="catalog__inner _container">
+      <div class="catalog__filters product-filers">
+        <form action="index.html" class="product-filters__form">
+          <ul class="product-filters__list">
+            <li class="product-filters__item item-product-filters">
+              <div class="item-product-filters__head">
+                <div class="item-product-filters__title">Класс авто</div>
+                <div class="item-product-filters__icon">
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+              </div>
+              <div class="item-product-filters__body">
+                <ul class="item-product-filters__list">
+                  <li class="item-product-filters__item">
+                    <input type="checkbox" id="class-1" name="class" value="Эконом">
+                    <label for="class-1">Эконом</label>
+                  </li>
+                  <li class="item-product-filters__item">
+                    <input type="checkbox" id="class-2" name="class" value="Премиум">
+                    <label for="class-2">Премиум</label>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="product-filters__item item-product-filters">
+              <div class="item-product-filters__head">
+                <div class="item-product-filters__title">Марка авто</div>
+                <div class="item-product-filters__icon">
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+              </div>
+              <div class="item-product-filters__body">
+                <ul class="item-product-filters__list">
+                  <li class="item-product-filters__item">
+                    <input type="checkbox" id="mark-1" name="mark" value="Марка 1">
+                    <label for="mark-1">Марка 1</label>
+                  </li>
+                  <li class="item-product-filters__item">
+                    <input type="checkbox" id="mark-2" name="mark" value="Марка 2">
+                    <label for="mark-2">Марка 2</label>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="product-filters__item item-product-filters">
+              <div class="item-product-filters__head">
+                <div class="item-product-filters__title">Модель авто</div>
+                <div class="item-product-filters__icon">
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+              </div>
+              <div class="item-product-filters__body">
+                <ul class="item-product-filters__list">
+                  <li class="item-product-filters__item">
+                    <input type="checkbox" id="model-1" name="model" value="Модель 1">
+                    <label for="model-1">Модель 1</label>
+                  </li>
+                  <li class="item-product-filters__item">
+                    <input type="checkbox" id="model-2" name="model" value="Модель 2">
+                    <label for="model-2">Модель 2</label>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="product-filters__item item-product-filters">
+              <div class="item-product-filters__head">
+                <div class="item-product-filters__title">Цвет авто</div>
+                <div class="item-product-filters__icon">
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+              </div>
+              <div class="item-product-filters__body">
+                <ul class="item-product-filters__list">
+                  <li class="item-product-filters__item">
+                    <input type="checkbox" id="color-1" name="color" value="Черный">
+                    <label for="color-1">Черный</label>
+                  </li>
+                  <li class="item-product-filters__item">
+                    <input type="checkbox" id="color-2" name="color" value="Белый">
+                    <label for="color-2">Белый</label>
+                  </li>
+                  <li class="item-product-filters__item">
+                    <input type="checkbox" id="color-3" name="color" value="Красный">
+                    <label for="color-3">Красный</label>
+                  </li>
+                  <li class="item-product-filters__item">
+                    <input type="checkbox" id="color-4" name="color" value="Бежевый">
+                    <label for="color-4">Бежевый</label>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="product-filters__item item-product-filters">
+              <div class="item-product-filters__head">
+                <div class="item-product-filters__title">Тип двигателя</div>
+                <div class="item-product-filters__icon">
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+              </div>
+              <div class="item-product-filters__body">
+                <ul class="item-product-filters__list">
+                  <li class="item-product-filters__item">
+                    <input type="checkbox" id="engine-1" name="engine" value="Бензиновый">
+                    <label for="engine-1">Бензиновый</label>
+                  </li>
+                  <li class="item-product-filters__item">
+                    <input type="checkbox" id="engine-2" name="engine" value="Дизельный">
+                    <label for="engine-2">Дизельный</label>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="product-filters__item item-product-filters">
+              <div class="item-product-filters__head">
+                <div class="item-product-filters__title">Коробка передач</div>
+                <div class="item-product-filters__icon">
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+              </div>
+              <div class="item-product-filters__body">
+                <ul class="item-product-filters__list">
+                  <li class="item-product-filters__item">
+                    <input type="checkbox" id="Transmission-1" name="Transmission" value="МКП">
+                    <label for="Transmission-1">МКП</label>
+                  </li>
+                  <li class="item-product-filters__item">
+                    <input type="checkbox" id="Transmission-2" name="Transmission" value="АКП">
+                    <label for="Transmission-2">АКП</label>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <div class="product-filers__controls">
+            <button type="reset" class="btn">Отменить</button>
+            <button type="submit" class="btn">Применить</button>
+          </div>
+        </form>
+
+      </div>
+      <div class="catalog__products">
+        <ul class="catalog__list">
+          <li class="catalog__item product-item">
+            <div class="product-item__picture"></div>
+            <div class="product-item__info info-product-item">
+              <div class="info-product-item__name">Chevrolet</div>
+              <div class="info-product-item__model">Spark</div>
+            </div>
+            <div class="product-item__rent rent-product-item">
+              <div class="rent-product-item__date">
+                <time datetime="2022-05-22">22.05.2022</time>
+                <span>-</span>
+                <time datetime="2022-05-25">25.05.2022</time>
+              </div>
+              <div class="rent-product-item__day">На 3 дня</div>
+            </div>
+            <div class="product-item__branch">г. Барнаул филиал №1</div>
+            <div class="product-item__price">от 3990₽ / сутки</div>
+            <div class="product-item__controls">
+              <button type="button" class="btn">Арендовать</button>
+            </div>
+          </li>
+          <li class="catalog__item product-item">
+            <div class="product-item__picture"></div>
+            <div class="product-item__info info-product-item">
+              <div class="info-product-item__name">Chevrolet</div>
+              <div class="info-product-item__model">Spark</div>
+            </div>
+            <div class="product-item__rent rent-product-item">
+              <div class="rent-product-item__date">
+                <time datetime="2022-05-22">22.05.2022</time>
+                <span>-</span>
+                <time datetime="2022-05-25">25.05.2022</time>
+              </div>
+              <div class="rent-product-item__day">На 3 дня</div>
+            </div>
+            <div class="product-item__branch">г. Барнаул филиал №1</div>
+            <div class="product-item__price">от 3990₽ / сутки</div>
+            <div class="product-item__controls">
+              <button type="button" class="btn">Арендовать</button>
+            </div>
+          </li>
+          <li class="catalog__item product-item">
+            <div class="product-item__picture"></div>
+            <div class="product-item__info info-product-item">
+              <div class="info-product-item__name">Chevrolet</div>
+              <div class="info-product-item__model">Spark</div>
+            </div>
+            <div class="product-item__rent rent-product-item">
+              <div class="rent-product-item__date">
+                <time datetime="2022-05-22">22.05.2022</time>
+                <span>-</span>
+                <time datetime="2022-05-25">25.05.2022</time>
+              </div>
+              <div class="rent-product-item__day">На 3 дня</div>
+            </div>
+            <div class="product-item__branch">г. Барнаул филиал №1</div>
+            <div class="product-item__price">от 3990₽ / сутки</div>
+            <div class="product-item__controls">
+              <button type="button" class="btn">Арендовать</button>
+            </div>
+          </li>
+          <li class="catalog__item product-item">
+            <div class="product-item__picture"></div>
+            <div class="product-item__info info-product-item">
+              <div class="info-product-item__name">Chevrolet</div>
+              <div class="info-product-item__model">Spark</div>
+            </div>
+            <div class="product-item__rent rent-product-item">
+              <div class="rent-product-item__date">
+                <time datetime="2022-05-22">22.05.2022</time>
+                <span>-</span>
+                <time datetime="2022-05-25">25.05.2022</time>
+              </div>
+              <div class="rent-product-item__day">На 3 дня</div>
+            </div>
+            <div class="product-item__branch">г. Барнаул филиал №1</div>
+            <div class="product-item__price">от 3990₽ / сутки</div>
+            <div class="product-item__controls">
+              <button type="button" class="btn">Арендовать</button>
+            </div>
+          </li>
+          <li class="catalog__item product-item">
+            <div class="product-item__picture"></div>
+            <div class="product-item__info info-product-item">
+              <div class="info-product-item__name">Chevrolet</div>
+              <div class="info-product-item__model">Spark</div>
+            </div>
+            <div class="product-item__rent rent-product-item">
+              <div class="rent-product-item__date">
+                <time datetime="2022-05-22">22.05.2022</time>
+                <span>-</span>
+                <time datetime="2022-05-25">25.05.2022</time>
+              </div>
+              <div class="rent-product-item__day">На 3 дня</div>
+            </div>
+            <div class="product-item__branch">г. Барнаул филиал №1</div>
+            <div class="product-item__price">от 3990₽ / сутки</div>
+            <div class="product-item__controls">
+              <button type="button" class="btn">Арендовать</button>
+            </div>
+          </li>
+          <li class="catalog__item product-item">
+            <div class="product-item__picture"></div>
+            <div class="product-item__info info-product-item">
+              <div class="info-product-item__name">Chevrolet</div>
+              <div class="info-product-item__model">Spark</div>
+            </div>
+            <div class="product-item__rent rent-product-item">
+              <div class="rent-product-item__date">
+                <time datetime="2022-05-22">22.05.2022</time>
+                <span>-</span>
+                <time datetime="2022-05-25">25.05.2022</time>
+              </div>
+              <div class="rent-product-item__day">На 3 дня</div>
+            </div>
+            <div class="product-item__branch">г. Барнаул филиал №1</div>
+            <div class="product-item__price">от 3990₽ / сутки</div>
+            <div class="product-item__controls">
+              <button type="button" class="btn">Арендовать</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <footer class="footer" id="footer">
+    <div class="footer__inner _container">
+      <nav class="footer__nav nav-footer">
+        <ul class="nav-footer__list">
+          <li class="nav-footer__item">
+            <a href="index.html">Главная</a>
+          </li>
+          <li class="nav-footer__item">
+            <a href="#">Филиалы</a>
+          </li>
+          <li class="nav-footer__item">
+            <a href="#">Бронирование</a>
+          </li>
+          <li class="nav-footer__item">
+            <a href="#">Личный кабинет</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="footer__tel">
+        <span>Контактный номер телефона:</span>
+        <a href="tel:88005553535">8 (800) 555-35-35</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

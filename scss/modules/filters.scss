@@ -28,6 +28,17 @@
 
   color: black;
 
+  transform: translateY(-50px);
+  opacity: 0;
+
+  transition: opacity .3s ease, transform .3s ease;
+
+  &._loaded {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
   &:first-child {
     .item-product-filters__head {
       border-top-left-radius: 12px;

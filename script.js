@@ -6,6 +6,29 @@ const dataScrollAnimElements = document.querySelectorAll('[data-scroll-anim]')
 const headerBlock = document.querySelector('.header')
 const introBlock = document.querySelector('.intro')
 const productFilters = document.querySelector('.product-filers')
+const pageUpBtn = document.querySelector('.page-up')
+const introArrow = document.querySelector('.intro__arrow')
+
+if (introArrow) {
+  introArrow.addEventListener('click', (event) => {
+    window.scrollTo({
+      top: introBlock.offsetHeight,
+      behavior: 'smooth'
+    })
+  })
+}
+
+if (pageUpBtn) {
+  window.addEventListener('scroll', (event) => {
+    pageUpBtn.classList.toggle('_show', window.scrollY > introBlock.offsetHeight)
+  })
+
+  pageUpBtn.addEventListener('click', (event) => {
+    window.scrollTo({
+      top: 0, behavior: 'smooth'
+    })
+  })
+}
 
 if (productFilters) {
   const productFiltersItems = productFilters.querySelectorAll('.item-product-filters')
@@ -19,6 +42,10 @@ if (productFilters) {
 
       filter.style = `--body-height: ${bodyFilterHeight}px`
       filter.classList.add('_hide-filter')
+
+      setTimeout(() => {
+        filter.classList.add('_loaded')
+      }, 250)
 
       filterHead.addEventListener('click', (event) => {
         filter.classList.toggle('_hide-filter')

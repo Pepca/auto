@@ -1,0 +1,28 @@
+.page-up {
+  position: fixed;
+  right: 80px;
+  bottom: -100%;
+  z-index: 1000;
+
+  transition: bottom 0.8s cubic-bezier(0.25, 0.1, 0, 1.13);
+
+  &._show {
+    bottom: 80px;
+  }
+
+  button {
+    font-size: 40px;
+
+    background-color: rgba(white, .8);
+
+    box-shadow: 0 5px 10px rgba(black, .3);
+
+    transition: background-color .3s ease;
+
+    @media screen and (min-width: 991.98px) {
+      &:hover {
+        background-color: white;
+      }
+    }
+  }
+}

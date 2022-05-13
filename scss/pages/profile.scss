@@ -1,0 +1,109 @@
+.profile {
+  margin: 150px 0;
+
+  &__inner {
+    position: relative;
+
+    display: flex;
+
+    gap: 70px;
+  }
+
+  &-content {
+    flex: 0 1 50%;
+
+    //padding-left: 100px;
+
+    &__title {
+      font-size: 35px;
+
+      margin-bottom: 30px;
+    }
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+
+      gap: 70px;
+    }
+  }
+
+
+  &-sidebar {
+    position: sticky;
+    top: 100px;
+    left: 30px;
+
+    height: 100%;
+
+    //min-height: 100vh;
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      gap: 20px;
+
+      padding: 20px;
+
+      background-color: var(--secondary-dark-color-hsl);
+
+      border-radius: 12px;
+    }
+
+    &__avatar {
+      border-bottom: 1px solid white;
+
+      padding-bottom: 20px;
+
+      span {
+        display: block;
+
+        width: 150px;
+        height: 150px;
+
+        background-color: gray;
+
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.info-profile-sidebar {
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    text-align: center;
+  }
+
+  &__item {
+    h3 {
+      font-size: 25px;
+
+      margin-bottom: 10px;
+    }
+
+    span {
+      font-size: 20px;
+    }
+  }
+}
+
+.booking-history-profile {
+  &__list {
+    display: flex;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 30px;
+  }
+}
+
+@import "../modules/bank-cards";
+@import "../modules/product-item";

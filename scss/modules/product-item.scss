@@ -4,16 +4,20 @@
   text-align: center;
 
   color: black;
-  background-color: rgba(white, .9);
+  background-color: rgba(white, .8);
+
+  box-shadow: 2px 5px 10px rgba(black, .5);
 
   border-radius: 12px;
 
   padding: 20px;
 
-  transition: border-radius .3s ease, background-color .3s ease;
+  transition: border-radius .3s ease, background-color .3s ease, transform .3s ease;
 
   @media screen and (min-width: 991.98px) {
     &:hover {
+      //transform: scale(1.05);
+
       background-color: white;
 
       border-bottom-right-radius: 0;
@@ -43,13 +47,19 @@
     margin-bottom: 15px;
   }
 
+  &__order-number {
+    font-size: 20px;
+
+    margin-bottom: 15px;
+  }
+
   &__price {
     font-size: 25px;
   }
 
   &__controls {
     position: absolute;
-    top: 100%;
+    top: calc(100% - 2px);
     left: 0;
     z-index: 2;
 

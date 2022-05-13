@@ -8341,8 +8341,10 @@ readers do not read off random characters that represent icons */
 
 :root {
   --base-default-color: 0, 0%;
+  --base-green-color: 80, 129%;
   --primary-dark-color-hsl: hsl(var(--base-default-color), 15%);
-  --secondary-dark-color-hsl: hsl(var(--base-default-color), 10%) ;
+  --secondary-dark-color-hsl: hsl(var(--base-default-color), 10%);
+  --green-color-hsl: hsl(var(--base-green-color), 35%);
 }
 
 @font-face {
@@ -8386,7 +8388,6 @@ a {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 ._container {
@@ -8533,7 +8534,7 @@ a {
 .submenu-item-nav__list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid black;
@@ -8547,12 +8548,17 @@ a {
   padding: 0;
   border-radius: 40px;
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
+}
+@media screen and (min-width: 991.98px) {
+  .submenu-item-nav__item button:hover {
+    transform: scale(1.05);
+  }
 }
 .submenu-item-nav__item button a {
   display: block;
   color: black;
-  font-size: 20px;
+  font-size: 25px;
   padding: 10px 15px;
 }
 
@@ -8587,6 +8593,7 @@ a {
 }
 
 .footer {
+  margin-top: auto;
   background-color: var(--secondary-dark-color-hsl);
   box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.4);
 }

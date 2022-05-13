@@ -11,10 +11,45 @@ const introArrow = document.querySelector('.intro__arrow')
 const bankCardItems = document.querySelectorAll('.item-cards-block')
 const popups = document.querySelectorAll('.popup')
 const dataPopupTargets = document.querySelectorAll('[data-popup]')
+const customSelects = document.querySelectorAll('.custom-select-input')
+const customTextInputs = document.querySelectorAll('input[type=text]._only-letters')
+const customNumberInputs = document.querySelectorAll('input[type=text]._only-numbers')
+
 
 const bodyLock = () => document.body.classList.add('_lock')
 
 const bodyUnlock = () => document.body.classList.remove('_lock')
+
+if (customSelects.length > 0) {
+  customSelects.forEach(customSelect => {
+    const hiddenInput = customSelect.querySelector('input')
+    const customSelectHead = customSelect.querySelector('.custom-select-input__head')
+    const customSelectTitle = customSelect.querySelector('.custom-select-input__title')
+    const optionsCustomSelect = customSelect.querySelectorAll('.options-custom-select__item')
+
+    customSelectHead.addEventListener('click', event => {
+      customSelect.classList.toggle('_expend-select')
+    })
+
+    if (optionsCustomSelect.length > 0) {
+      optionsCustomSelect.forEach(optionCustomSelect => {
+        optionCustomSelect.addEventListener('click', event => {
+          customSelectTitle.textContent = event.currentTarget.textContent
+          hiddenInput.value = event.currentTarget.textContent
+
+          customSelect.classList.remove('_expend-select')
+        })
+      })
+    }
+  })
+
+  document.addEventListener('click', event => {
+    customSelects.forEach(customSelects => {
+
+      if (customSelects.classList.contains('_expend-select') && !event.target.closest('.custom-select-input')) customSelects.classList.remove('_expend-select')
+    })
+  })
+}
 
 if (popups.length > 0) {
   const closePopup = (currentPopup, event) => {
@@ -178,36 +213,81 @@ if (inputBlock.length > 0) {
 }
 
 if (inputTel.length > 0) {
-  const maskTelInput = (event) => {
-    const pos = event.target.selectionStart
+  inputTel.forEach(input => {
+    let keyCode
 
-    if (pos < 3) event.target.value = '+7 '
+    function mask(event) {
+      event.keyCode && (keyCode = event.keyCode)
+      let pos = this.selectionStart
+      if (pos < 3) event.preventDefault()
+      const matrix = '+7 (___) ___ __-__'
+      let i = 0
+      const def = matrix.replace(/\D/g, '')
+      const val = this.value.replace(/\D/g, '')
+      let new_value = matrix.replace(/[_\d]/g, function (a) {
+        return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+      })
 
-    if (event.keyCode === 8) {
-      event.target.value = '+7 ' + event.target.value.substr(3)
+      i = new_value.indexOf('_')
+
+      if (i !== -1) {
+        i < 5 && (i = 3)
+        new_value = new_value.slice(0, i)
+      }
+
+      let reg = matrix.substr(0, this.value.length).replace(/_+/g, function (a) {
+        return '\\d{1,' + a.length + '}'
+      }).replace(/[+()]/g, '\\$&')
+
+      reg = new RegExp('^' + reg + '$')
+
+      if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value
+
+      if (event.type === 'focus') {
+        this.parentElement.classList.add('_typing')
+      }
+
+      if (event.type === 'blur' && this.value.length < 5) {
+        this.parentElement.classList.remove('_typing')
+        this.value = ''
+      }
     }
 
-    if (event.keyCode === 47) {
-      event.target.value = '+7 ' + event.target.value.substr(3)
+    input.addEventListener('input', mask, false)
+    input.addEventListener('focus', mask, false)
+    input.addEventListener('blur', mask, false)
+    input.addEventListener('keydown', mask, false)
+  })
+}
+
+if (customTextInputs.length > 0) {
+  const maskCustomTextInputs = (event) => {
+    event.target.value = event.target.value.replace(/\d/g, '')
+
+    if (event.type === 'blur' && event.target.value === '') {
+      event.target.parentElement.classList.remove('_typing')
     }
 
   }
 
-  inputTel.forEach(input => {
-    input.addEventListener('input', maskTelInput)
-    input.addEventListener('keydown', maskTelInput)
-
-    input.addEventListener('focus', (event) => {
-      event.target.value = '+7 ' + event.target.value.substr(3)
-      event.target.parentElement.classList.add('_typing')
-    })
-
-    input.addEventListener('blur', (event) => {
-      if (event.target.value === '+7 ') {
-        event.target.value = ''
-        event.target.parentElement.classList.remove('_typing')
-      }
-    })
+  customTextInputs.forEach(customTextInput => {
+    customTextInput.addEventListener('input', maskCustomTextInputs)
+    customTextInput.addEventListener('blur', maskCustomTextInputs)
   })
+}
 
+if (customNumberInputs.length > 0) {
+  const maskCustomNumberInputs = (event) => {
+    event.target.value = event.target.value.replace(/\D/g, '')
+
+    if (event.type === 'blur' && event.target.value === '') {
+      event.target.parentElement.classList.remove('_typing')
+    }
+
+  }
+
+  customNumberInputs.forEach(customNumberInput => {
+    customNumberInput.addEventListener('input', maskCustomNumberInputs)
+    customNumberInput.addEventListener('blur', maskCustomNumberInputs)
+  })
 }

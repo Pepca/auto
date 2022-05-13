@@ -17,6 +17,7 @@
     flex-wrap: wrap;
 
     gap: 23px;
+    row-gap: 30px;
   }
 
   &__btn {
@@ -31,10 +32,13 @@
 
       color: white;
 
-      transition: transform .3s ease;
+      transition: transform .3s ease, background-color .3s ease, color .3s ease;
 
       @media screen and (min-width: 991.98px) {
         &:hover {
+          background-color: white;
+          color: black;
+
           transform: scale(1.1);
         }
       }

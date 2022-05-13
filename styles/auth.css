@@ -37,6 +37,22 @@
 .form-auth__btn {
   padding: 10px 30px;
   margin-top: 30px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+@media screen and (min-width: 991.98px) {
+  .form-auth__btn:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+  }
+}
+.form-auth__btn:focus {
+  background-color: white;
+  color: black;
+  transform: scale(1.1);
 }
 
 .item-auth-form {
@@ -97,14 +113,18 @@
   font-size: 25px;
   padding: 10px 20px;
   border-radius: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
   width: 100%;
   border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 ._with-icon .input-block__target {
   padding-left: 70px;
 }
 .input-block__target:focus {
   outline: none;
+  background-color: white;
 }
 
 /*# sourceMappingURL=auth.css.map */

@@ -12,8 +12,6 @@
   &-content {
     flex: 0 1 50%;
 
-    //padding-left: 100px;
-
     &__title {
       font-size: 35px;
 
@@ -47,7 +45,9 @@
 
       padding: 20px;
 
-      background-color: var(--secondary-dark-color-hsl);
+      background-color: rgba(black, .3);
+
+      box-shadow: 5px 10px 15px rgba(black, .3);
 
       border-radius: 12px;
     }
@@ -60,12 +60,38 @@
       span {
         display: block;
 
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
 
         background-color: gray;
 
         border-radius: 50%;
+      }
+    }
+
+    &__controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      gap: 20px;
+
+      button {
+        font-size: 25px;
+
+        background-color: transparent;
+        color: white;
+
+        border: 2px solid white;
+
+        transition: background-color .3s ease, color .3s ease;
+
+        @media screen and (min-width: 991.98px) {
+          &:hover {
+            background-color: white;
+            color: black;
+          }
+        }
       }
     }
   }
@@ -85,7 +111,7 @@
     h3 {
       font-size: 25px;
 
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     span {
@@ -103,7 +129,32 @@
 
     gap: 30px;
   }
+
+  &__btn {
+    margin-top: 100px;
+
+    text-align: center;
+
+    button {
+      background-color: transparent;
+      color: white;
+
+      border: 2px solid white;
+
+      transition: background-color .3s ease, color .3s ease, transform .3s ease;
+
+      @media screen and (min-width: 991.98px) {
+        &:hover {
+          background-color: white;
+          color: black;
+
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
 }
 
 @import "../modules/bank-cards";
 @import "../modules/product-item";
+@import "../modules/popup";

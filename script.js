@@ -8,12 +8,65 @@ const introBlock = document.querySelector('.intro')
 const productFilters = document.querySelector('.product-filers')
 const pageUpBtn = document.querySelector('.page-up')
 const introArrow = document.querySelector('.intro__arrow')
+const bankCardItems = document.querySelectorAll('.item-cards-block')
+const popups = document.querySelectorAll('.popup')
+const dataPopupTargets = document.querySelectorAll('[data-popup]')
+
+const bodyLock = () => document.body.classList.add('_lock')
+
+const bodyUnlock = () => document.body.classList.remove('_lock')
+
+if (popups.length > 0) {
+  const closePopup = (currentPopup, event) => {
+    currentPopup.classList.remove('_popup-open')
+
+    bodyUnlock()
+  }
+
+
+  popups.forEach(popup => {
+    const popupInner = popup.querySelector('.popup__inner')
+    const popupClose = popup.querySelector('.popup__close')
+
+    popup.addEventListener('click', closePopup.bind(null, popup))
+    popupInner.addEventListener('click', event => event.stopPropagation())
+    popupClose.addEventListener('click', closePopup.bind(null, popup))
+  })
+}
+
+if (popups.length > 0 && dataPopupTargets.length > 0) {
+  const scrollbarWidth = window.innerWidth - document.body.offsetWidth
+
+  document.body.style.setProperty('--scrollbarWidth', scrollbarWidth + 'px')
+}
+
+if (dataPopupTargets.length > 0) {
+  dataPopupTargets.forEach(popupTarget => {
+    popupTarget.addEventListener('click', event => {
+      const attrValue = event.currentTarget.getAttribute('data-popup')
+      const currentPopup = document.getElementById(attrValue)
+
+      currentPopup.classList.add('_popup-open')
+
+      bodyLock()
+    })
+  })
+}
+
+if (bankCardItems.length > 0) {
+  bankCardItems.forEach(itemCard => {
+    const itemCardBtn = itemCard.querySelector('.user-data-card__btn')
+
+    itemCardBtn.addEventListener('click', (event) => {
+      itemCard.classList.toggle('_show-info')
+    })
+  })
+}
 
 if (introArrow) {
   introArrow.addEventListener('click', (event) => {
     window.scrollTo({
-      top: introBlock.offsetHeight,
-      behavior: 'smooth'
+      top: introBlock.offsetHeight, behavior: 'smooth'
     })
   })
 }

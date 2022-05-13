@@ -116,6 +116,7 @@
   color: black;
   transform: translateY(-50px);
   opacity: 0;
+  overflow: hidden;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 .item-product-filters._loaded {

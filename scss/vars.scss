@@ -1,8 +1,10 @@
 :root {
   --base-default-color: 0, 0%;
   --base-green-color: 80, 129%;
+  --base-red-color: 0, 80%;
 
   --primary-dark-color-hsl: hsl(var(--base-default-color), 15%);
   --secondary-dark-color-hsl: hsl(var(--base-default-color), 10%);
   --green-color-hsl: hsl(var(--base-green-color), 35%);
+  --red-color-hsl: hsl(var(--base-red-color), 45%);
 }

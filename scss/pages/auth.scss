@@ -54,6 +54,30 @@
     padding: 10px 30px;
 
     margin-top: 30px;
+
+    background-color: transparent;
+    color: white;
+
+    border: 2px solid white;
+
+    transition: background-color .3s ease, color .3s ease, transform .3s ease;
+
+    @media screen and (min-width: 991.98px) {
+      &:hover {
+        background-color: white;
+        color: black;
+
+        transform: scale(1.1);
+      }
+    }
+
+    &:focus {
+      background-color: white;
+      color: black;
+
+      transform: scale(1.1);
+    }
+
   }
 }
 

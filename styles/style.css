@@ -8342,9 +8342,11 @@ readers do not read off random characters that represent icons */
 :root {
   --base-default-color: 0, 0%;
   --base-green-color: 80, 129%;
+  --base-red-color: 0, 80%;
   --primary-dark-color-hsl: hsl(var(--base-default-color), 15%);
   --secondary-dark-color-hsl: hsl(var(--base-default-color), 10%);
   --green-color-hsl: hsl(var(--base-green-color), 35%);
+  --red-color-hsl: hsl(var(--base-red-color), 45%);
 }
 
 @font-face {
@@ -8371,6 +8373,10 @@ body {
   background-color: var(--primary-dark-color-hsl);
   color: white;
   font-family: "Montserrat", sans-serif;
+}
+body._lock {
+  overflow: hidden;
+  padding-right: var(--scrollbarWidth);
 }
 
 button {
@@ -8426,6 +8432,9 @@ a {
   width: 100%;
   background-color: var(--primary-dark-color-hsl);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+._lock .header {
+  padding-right: var(--scrollbarWidth);
 }
 .header:after {
   content: "";

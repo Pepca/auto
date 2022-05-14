@@ -465,6 +465,12 @@
   }
 }
 
+.content-popup__list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .input-block__title {
   font-size: 30px;
   text-align: center;

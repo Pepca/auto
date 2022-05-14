@@ -8369,7 +8369,12 @@ readers do not read off random characters that represent icons */
   margin: 0;
 }
 
+html * {
+  text-rendering: optimizeLegibility !important;
+}
+
 body {
+  -webkit-font-smoothing: antialiased;
   background-color: var(--primary-dark-color-hsl);
   color: white;
   font-family: "Montserrat", sans-serif;

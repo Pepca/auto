@@ -8,10 +8,281 @@
   <link rel="stylesheet" href="styles/booking.css">
   <script src="scripts/script.js" defer></script>
   <script src="scripts/filters.js" defer></script>
+  <script src="scripts/popup.js" defer></script>
+  <script src="https://unpkg.com/imask@6.4.2/dist/imask.js" defer></script>
+  <script src="scripts/mask.js" defer></script>
+  <script src="scripts/customSelect.js" defer></script>
   <title>Document</title>
 </head>
 <body>
 <div class="wrapper">
+  <div class="popup" id="booking">
+    <div class="popup__inner">
+      <div class="popup__close">
+        <span></span>
+      </div>
+      <div class="popup__title">Бронирование</div>
+      <form action="profile.html" class="popup__form form-popup">
+        <ul class="form-popup__list">
+          <li class="form-popup__item item-popup-form">
+            <div class="input-block">
+              <ul class="input-block__list">
+                <li class="input-block__item">
+                  <label for="fist-name" class="input-block__label"
+                  >Имя</label
+                  >
+                  <input
+                      type="text"
+                      class="item-auth-form__input input-block__target _only-letters"
+                      name="fist-name"
+                      id="fist-name"
+                  />
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="form-popup__item item-popup-form">
+            <div class="input-block">
+              <ul class="input-block__list">
+                <li class="input-block__item">
+                  <label for="last-name" class="input-block__label"
+                  >Фамилия</label
+                  >
+                  <input
+                      type="text"
+                      class="item-auth-form__input input-block__target _only-letters"
+                      name="last-name"
+                      id="last-name"
+                  />
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="form-popup__item item-popup-form">
+            <div class="input-block">
+              <ul class="input-block__list">
+                <li class="input-block__item">
+                  <label for="middle-name" class="input-block__label"
+                  >Отчество</label
+                  >
+                  <input
+                      type="text"
+                      class="item-auth-form__input input-block__target _only-letters"
+                      name="middle-name"
+                      id="middle-name"
+                  />
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="form-popup__item item-popup-form">
+            <div class="input-block">
+              <ul class="input-block__list">
+                <li class="input-block__item">
+                  <label for="tel" class="input-block__label"
+                  >Номер телефона</label
+                  >
+                  <input
+                      type="tel"
+                      class="item-auth-form__input input-block__target"
+                      name="tel"
+                      id="tel"
+                  />
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="form-auth__item item-auth-form">
+            <div class="input-block">
+              <h3 class="input-block__title">Дата рождения</h3>
+              <ul class="input-block__list">
+                <li class="input-block__item custom-select-input">
+                  <input type="text" name="born-day" value="">
+                  <div class="custom-select-input__head">
+                    <div class="custom-select-input__title">13</div>
+                    <div class="custom-select-input__icon"><i class="fa-solid fa-angle-down"></i>
+                    </div>
+                  </div>
+                  <div class="custom-select-input__options options-custom-select">
+                    <ul class="options-custom-select__list">
+                      <li class="options-custom-select__item">1</li>
+                      <li class="options-custom-select__item">2</li>
+                      <li class="options-custom-select__item">3</li>
+                      <li class="options-custom-select__item">4</li>
+                      <li class="options-custom-select__item">5</li>
+                      <li class="options-custom-select__item">6</li>
+                      <li class="options-custom-select__item">7</li>
+                      <li class="options-custom-select__item">8</li>
+                      <li class="options-custom-select__item">9</li>
+                      <li class="options-custom-select__item">10</li>
+                      <li class="options-custom-select__item">11</li>
+                      <li class="options-custom-select__item">12</li>
+                      <li class="options-custom-select__item">13</li>
+                      <li class="options-custom-select__item">14</li>
+                      <li class="options-custom-select__item">15</li>
+                      <li class="options-custom-select__item">16</li>
+                      <li class="options-custom-select__item">17</li>
+                      <li class="options-custom-select__item">18</li>
+                      <li class="options-custom-select__item">19</li>
+                      <li class="options-custom-select__item">20</li>
+                      <li class="options-custom-select__item">21</li>
+                      <li class="options-custom-select__item">22</li>
+                      <li class="options-custom-select__item">23</li>
+                      <li class="options-custom-select__item">24</li>
+                      <li class="options-custom-select__item">25</li>
+                      <li class="options-custom-select__item">26</li>
+                      <li class="options-custom-select__item">27</li>
+                      <li class="options-custom-select__item">28</li>
+                      <li class="options-custom-select__item">29</li>
+                      <li class="options-custom-select__item">30</li>
+                      <li class="options-custom-select__item">31</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="input-block__item custom-select-input">
+                  <input type="text" name="born-month" value="">
+                  <div class="custom-select-input__head">
+                    <div class="custom-select-input__title">5</div>
+                    <div class="custom-select-input__icon"><i class="fa-solid fa-angle-down"></i>
+                    </div>
+                  </div>
+                  <div class="custom-select-input__options options-custom-select">
+                    <ul class="options-custom-select__list">
+                      <li class="options-custom-select__item">1</li>
+                      <li class="options-custom-select__item">2</li>
+                      <li class="options-custom-select__item">3</li>
+                      <li class="options-custom-select__item">4</li>
+                      <li class="options-custom-select__item">5</li>
+                      <li class="options-custom-select__item">6</li>
+                      <li class="options-custom-select__item">7</li>
+                      <li class="options-custom-select__item">8</li>
+                      <li class="options-custom-select__item">9</li>
+                      <li class="options-custom-select__item">10</li>
+                      <li class="options-custom-select__item">11</li>
+                      <li class="options-custom-select__item">12</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="input-block__item custom-select-input">
+                  <input type="text" name="born-year" value="">
+                  <div class="custom-select-input__head">
+                    <div class="custom-select-input__title">2022</div>
+                    <div class="custom-select-input__icon"><i class="fa-solid fa-angle-down"></i>
+                    </div>
+                  </div>
+                  <div class="custom-select-input__options options-custom-select">
+                    <ul class="options-custom-select__list">
+                      <li class="options-custom-select__item">2022</li>
+                      <li class="options-custom-select__item">2021</li>
+                      <li class="options-custom-select__item">2019</li>
+                      <li class="options-custom-select__item">2018</li>
+                      <li class="options-custom-select__item">2017</li>
+                      <li class="options-custom-select__item">2016</li>
+                      <li class="options-custom-select__item">2015</li>
+                      <li class="options-custom-select__item">2014</li>
+                      <li class="options-custom-select__item">2013</li>
+                      <li class="options-custom-select__item">2012</li>
+                      <li class="options-custom-select__item">2010</li>
+                      <li class="options-custom-select__item">2009</li>
+                      <li class="options-custom-select__item">2008</li>
+                      <li class="options-custom-select__item">2007</li>
+                      <li class="options-custom-select__item">2006</li>
+                      <li class="options-custom-select__item">2005</li>
+                      <li class="options-custom-select__item">2004</li>
+                      <li class="options-custom-select__item">2003</li>
+                      <li class="options-custom-select__item">2002</li>
+                      <li class="options-custom-select__item">2001</li>
+                      <li class="options-custom-select__item">2000</li>
+                      <li class="options-custom-select__item">1999</li>
+                      <li class="options-custom-select__item">1998</li>
+                      <li class="options-custom-select__item">1997</li>
+                      <li class="options-custom-select__item">1996</li>
+                      <li class="options-custom-select__item">1995</li>
+                      <li class="options-custom-select__item">1994</li>
+                      <li class="options-custom-select__item">1993</li>
+                      <li class="options-custom-select__item">1992</li>
+                      <li class="options-custom-select__item">1991</li>
+                      <li class="options-custom-select__item">1990</li>
+                      <li class="options-custom-select__item">1989</li>
+                      <li class="options-custom-select__item">1988</li>
+                      <li class="options-custom-select__item">1987</li>
+                      <li class="options-custom-select__item">1986</li>
+                      <li class="options-custom-select__item">1985</li>
+                      <li class="options-custom-select__item">1984</li>
+                      <li class="options-custom-select__item">1983</li>
+                      <li class="options-custom-select__item">1982</li>
+                      <li class="options-custom-select__item">1981</li>
+                      <li class="options-custom-select__item">1980</li>
+                      <li class="options-custom-select__item">1979</li>
+                      <li class="options-custom-select__item">1978</li>
+                      <li class="options-custom-select__item">1977</li>
+                      <li class="options-custom-select__item">1976</li>
+                      <li class="options-custom-select__item">1975</li>
+                      <li class="options-custom-select__item">1974</li>
+                      <li class="options-custom-select__item">1973</li>
+                      <li class="options-custom-select__item">1972</li>
+                      <li class="options-custom-select__item">1971</li>
+                      <li class="options-custom-select__item">1970</li>
+                      <li class="options-custom-select__item">1969</li>
+                      <li class="options-custom-select__item">1968</li>
+                      <li class="options-custom-select__item">1967</li>
+                      <li class="options-custom-select__item">1966</li>
+                      <li class="options-custom-select__item">1965</li>
+                      <li class="options-custom-select__item">1964</li>
+                      <li class="options-custom-select__item">1963</li>
+                      <li class="options-custom-select__item">1962</li>
+                      <li class="options-custom-select__item">1961</li>
+                      <li class="options-custom-select__item">1960</li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="form-popup__item item-popup-form">
+            <div class="input-block">
+              <h3 class="input-block__title">Паспортные данные</h3>
+              <ul class="input-block__list">
+                <li class="input-block__item">
+                  <label for="passport-series" class="input-block__label">Серия</label>
+                  <input type="text" class="item-popup-form__input input-block__target _passport-series"
+                         name="passport-series"
+                         id="passport-series">
+                </li>
+                <li class="input-block__item">
+                  <label for="passport-number" class="input-block__label">Номер</label>
+                  <input type="text" class="item-popup-form__input input-block__target _passport-number"
+                         name="passport-number"
+                         id="passport-number">
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="form-popup__item item-popup-form">
+            <div class="input-block">
+              <ul class="input-block__list">
+                <li class="input-block__item">
+                  <label for="card-number" class="input-block__label"
+                  >Номер карты</label
+                  >
+                  <input
+                      type="text"
+                      class="item-auth-form__input input-block__target _card-number"
+                      name="card-number"
+                      id="card-number"
+                  />
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <div class="form-popup__btn">
+          <button type="submit" class="btn">Забронировать</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <header class="header _white">
     <div class="header__inner _container">
       <div class="header__logo"><a href="index.html">
@@ -232,231 +503,208 @@
             </div>
             <div class="product-item__branch">г. Барнаул филиал №1</div>
             <div class="product-item__price">от 3990₽ / сутки</div>
-            <div class="product-item__controls">
-              <button type="button" class="btn">Арендовать</button>
+            <div class="product-item__total">Всего:
+              <div><span
+                  class="discount">11,970₽</span> <span class="current-price">11,371₽</span></div>
             </div>
-          </li>
-          <li class="booking__item product-item">
-            <div class="product-item__picture"></div>
-            <div class="product-item__info info-product-item">
-              <div class="info-product-item__name">Chevrolet</div>
-              <div class="info-product-item__model">Spark</div>
-            </div>
-            <div class="product-item__rent rent-product-item">
-              <div class="rent-product-item__date">
-                <time datetime="2022-05-22">22.05.2022</time>
-                <span>-</span>
-                <time datetime="2022-05-25">25.05.2022</time>
-              </div>
-              <div class="rent-product-item__day">На 3 дня</div>
-            </div>
-            <div class="product-item__branch">г. Барнаул филиал №1</div>
-            <div class="product-item__price">от 3990₽ / сутки</div>
-            <div class="product-item__controls">
-              <button type="button" class="btn">Арендовать</button>
-            </div>
-          </li>
-          <li class="booking__item product-item">
-            <div class="product-item__picture"></div>
-            <div class="product-item__info info-product-item">
-              <div class="info-product-item__name">Chevrolet</div>
-              <div class="info-product-item__model">Spark</div>
-            </div>
-            <div class="product-item__rent rent-product-item">
-              <div class="rent-product-item__date">
-                <time datetime="2022-05-22">22.05.2022</time>
-                <span>-</span>
-                <time datetime="2022-05-25">25.05.2022</time>
-              </div>
-              <div class="rent-product-item__day">На 3 дня</div>
-            </div>
-            <div class="product-item__branch">г. Барнаул филиал №1</div>
-            <div class="product-item__price">от 3990₽ / сутки</div>
-            <div class="product-item__controls">
-              <button type="button" class="btn">Арендовать</button>
-            </div>
-          </li>
-          <li class="booking__item product-item">
-            <div class="product-item__picture"></div>
-            <div class="product-item__info info-product-item">
-              <div class="info-product-item__name">Chevrolet</div>
-              <div class="info-product-item__model">Spark</div>
-            </div>
-            <div class="product-item__rent rent-product-item">
-              <div class="rent-product-item__date">
-                <time datetime="2022-05-22">22.05.2022</time>
-                <span>-</span>
-                <time datetime="2022-05-25">25.05.2022</time>
-              </div>
-              <div class="rent-product-item__day">На 3 дня</div>
-            </div>
-            <div class="product-item__branch">г. Барнаул филиал №1</div>
-            <div class="product-item__price">от 3990₽ / сутки</div>
-            <div class="product-item__controls">
-              <button type="button" class="btn">Арендовать</button>
-            </div>
-          </li>
-          <li class="booking__item product-item">
-            <div class="product-item__picture"></div>
-            <div class="product-item__info info-product-item">
-              <div class="info-product-item__name">Chevrolet</div>
-              <div class="info-product-item__model">Spark</div>
-            </div>
-            <div class="product-item__rent rent-product-item">
-              <div class="rent-product-item__date">
-                <time datetime="2022-05-22">22.05.2022</time>
-                <span>-</span>
-                <time datetime="2022-05-25">25.05.2022</time>
-              </div>
-              <div class="rent-product-item__day">На 3 дня</div>
-            </div>
-            <div class="product-item__branch">г. Барнаул филиал №1</div>
-            <div class="product-item__price">от 3990₽ / сутки</div>
-            <div class="product-item__controls">
-              <button type="button" class="btn">Арендовать</button>
-            </div>
-          </li>
-          <li class="booking__item product-item">
-            <div class="product-item__picture"></div>
-            <div class="product-item__info info-product-item">
-              <div class="info-product-item__name">Chevrolet</div>
-              <div class="info-product-item__model">Spark</div>
-            </div>
-            <div class="product-item__rent rent-product-item">
-              <div class="rent-product-item__date">
-                <time datetime="2022-05-22">22.05.2022</time>
-                <span>-</span>
-                <time datetime="2022-05-25">25.05.2022</time>
-              </div>
-              <div class="rent-product-item__day">На 3 дня</div>
-            </div>
-            <div class="product-item__branch">г. Барнаул филиал №1</div>
-            <div class="product-item__price">от 3990₽ / сутки</div>
-            <div class="product-item__controls">
-              <button type="button" class="btn">Арендовать</button>
-            </div>
-          </li>
-          <li class="booking__item product-item">
-            <div class="product-item__picture"></div>
-            <div class="product-item__info info-product-item">
-              <div class="info-product-item__name">Chevrolet</div>
-              <div class="info-product-item__model">Spark</div>
-            </div>
-            <div class="product-item__rent rent-product-item">
-              <div class="rent-product-item__date">
-                <time datetime="2022-05-22">22.05.2022</time>
-                <span>-</span>
-                <time datetime="2022-05-25">25.05.2022</time>
-              </div>
-              <div class="rent-product-item__day">На 3 дня</div>
-            </div>
-            <div class="product-item__branch">г. Барнаул филиал №1</div>
-            <div class="product-item__price">от 3990₽ / сутки</div>
-            <div class="product-item__controls">
-              <button type="button" class="btn">Арендовать</button>
-            </div>
-          </li>
-          <li class="booking__item product-item">
-            <div class="product-item__picture"></div>
-            <div class="product-item__info info-product-item">
-              <div class="info-product-item__name">Chevrolet</div>
-              <div class="info-product-item__model">Spark</div>
-            </div>
-            <div class="product-item__rent rent-product-item">
-              <div class="rent-product-item__date">
-                <time datetime="2022-05-22">22.05.2022</time>
-                <span>-</span>
-                <time datetime="2022-05-25">25.05.2022</time>
-              </div>
-              <div class="rent-product-item__day">На 3 дня</div>
-            </div>
-            <div class="product-item__branch">г. Барнаул филиал №1</div>
-            <div class="product-item__price">от 3990₽ / сутки</div>
-            <div class="product-item__controls">
-              <button type="button" class="btn">Арендовать</button>
-            </div>
-          </li>
-          <li class="booking__item product-item">
-            <div class="product-item__picture"></div>
-            <div class="product-item__info info-product-item">
-              <div class="info-product-item__name">Chevrolet</div>
-              <div class="info-product-item__model">Spark</div>
-            </div>
-            <div class="product-item__rent rent-product-item">
-              <div class="rent-product-item__date">
-                <time datetime="2022-05-22">22.05.2022</time>
-                <span>-</span>
-                <time datetime="2022-05-25">25.05.2022</time>
-              </div>
-              <div class="rent-product-item__day">На 3 дня</div>
-            </div>
-            <div class="product-item__branch">г. Барнаул филиал №1</div>
-            <div class="product-item__price">от 3990₽ / сутки</div>
-            <div class="product-item__controls">
-              <button type="button" class="btn">Арендовать</button>
-            </div>
-          </li>
-          <li class="booking__item product-item">
-            <div class="product-item__picture"></div>
-            <div class="product-item__info info-product-item">
-              <div class="info-product-item__name">Chevrolet</div>
-              <div class="info-product-item__model">Spark</div>
-            </div>
-            <div class="product-item__rent rent-product-item">
-              <div class="rent-product-item__date">
-                <time datetime="2022-05-22">22.05.2022</time>
-                <span>-</span>
-                <time datetime="2022-05-25">25.05.2022</time>
-              </div>
-              <div class="rent-product-item__day">На 3 дня</div>
-            </div>
-            <div class="product-item__branch">г. Барнаул филиал №1</div>
-            <div class="product-item__price">от 3990₽ / сутки</div>
-            <div class="product-item__controls">
-              <button type="button" class="btn">Арендовать</button>
-            </div>
-          </li>
-          <li class="booking__item product-item">
-            <div class="product-item__picture"></div>
-            <div class="product-item__info info-product-item">
-              <div class="info-product-item__name">Chevrolet</div>
-              <div class="info-product-item__model">Spark</div>
-            </div>
-            <div class="product-item__rent rent-product-item">
-              <div class="rent-product-item__date">
-                <time datetime="2022-05-22">22.05.2022</time>
-                <span>-</span>
-                <time datetime="2022-05-25">25.05.2022</time>
-              </div>
-              <div class="rent-product-item__day">На 3 дня</div>
-            </div>
-            <div class="product-item__branch">г. Барнаул филиал №1</div>
-            <div class="product-item__price">от 3990₽ / сутки</div>
-            <div class="product-item__controls">
-              <button type="button" class="btn">Арендовать</button>
-            </div>
-          </li>
-          <li class="booking__item product-item">
-            <div class="product-item__picture"></div>
-            <div class="product-item__info info-product-item">
-              <div class="info-product-item__name">Chevrolet</div>
-              <div class="info-product-item__model">Spark</div>
-            </div>
-            <div class="product-item__rent rent-product-item">
-              <div class="rent-product-item__date">
-                <time datetime="2022-05-22">22.05.2022</time>
-                <span>-</span>
-                <time datetime="2022-05-25">25.05.2022</time>
-              </div>
-              <div class="rent-product-item__day">На 3 дня</div>
-            </div>
-            <div class="product-item__branch">г. Барнаул филиал №1</div>
-            <div class="product-item__price">от 3990₽ / сутки</div>
-            <div class="product-item__controls">
-              <button type="button" class="btn">Арендовать</button>
-            </div>
-          </li>
 
+            <div class="product-item__controls">
+              <button type="button" class="btn" data-popup="booking">Арендовать</button>
+            </div>
+          </li>
+          <li class="booking__item product-item">
+            <div class="product-item__picture"></div>
+            <div class="product-item__info info-product-item">
+              <div class="info-product-item__name">Chevrolet</div>
+              <div class="info-product-item__model">Spark</div>
+            </div>
+            <div class="product-item__rent rent-product-item">
+              <div class="rent-product-item__date">
+                <time datetime="2022-05-22">22.05.2022</time>
+                <span>-</span>
+                <time datetime="2022-05-25">25.05.2022</time>
+              </div>
+              <div class="rent-product-item__day">На 3 дня</div>
+            </div>
+            <div class="product-item__branch">г. Барнаул филиал №1</div>
+            <div class="product-item__price">от 3990₽ / сутки</div>
+            <div class="product-item__total">Всего:
+              <div><span
+                  class="discount">11,970₽</span> <span class="current-price">11,371₽</span></div>
+            </div>
+
+            <div class="product-item__controls">
+              <button type="button" class="btn" data-popup="booking">Арендовать</button>
+            </div>
+          </li><li class="booking__item product-item">
+          <div class="product-item__picture"></div>
+          <div class="product-item__info info-product-item">
+            <div class="info-product-item__name">Chevrolet</div>
+            <div class="info-product-item__model">Spark</div>
+          </div>
+          <div class="product-item__rent rent-product-item">
+            <div class="rent-product-item__date">
+              <time datetime="2022-05-22">22.05.2022</time>
+              <span>-</span>
+              <time datetime="2022-05-25">25.05.2022</time>
+            </div>
+            <div class="rent-product-item__day">На 3 дня</div>
+          </div>
+          <div class="product-item__branch">г. Барнаул филиал №1</div>
+          <div class="product-item__price">от 3990₽ / сутки</div>
+          <div class="product-item__total">Всего:
+            <div><span
+                class="discount">11,970₽</span> <span class="current-price">11,371₽</span></div>
+          </div>
+
+          <div class="product-item__controls">
+            <button type="button" class="btn" data-popup="booking">Арендовать</button>
+          </div>
+        </li><li class="booking__item product-item">
+          <div class="product-item__picture"></div>
+          <div class="product-item__info info-product-item">
+            <div class="info-product-item__name">Chevrolet</div>
+            <div class="info-product-item__model">Spark</div>
+          </div>
+          <div class="product-item__rent rent-product-item">
+            <div class="rent-product-item__date">
+              <time datetime="2022-05-22">22.05.2022</time>
+              <span>-</span>
+              <time datetime="2022-05-25">25.05.2022</time>
+            </div>
+            <div class="rent-product-item__day">На 3 дня</div>
+          </div>
+          <div class="product-item__branch">г. Барнаул филиал №1</div>
+          <div class="product-item__price">от 3990₽ / сутки</div>
+          <div class="product-item__total">Всего:
+            <div><span
+                class="discount">11,970₽</span> <span class="current-price">11,371₽</span></div>
+          </div>
+
+          <div class="product-item__controls">
+            <button type="button" class="btn" data-popup="booking">Арендовать</button>
+          </div>
+        </li><li class="booking__item product-item">
+          <div class="product-item__picture"></div>
+          <div class="product-item__info info-product-item">
+            <div class="info-product-item__name">Chevrolet</div>
+            <div class="info-product-item__model">Spark</div>
+          </div>
+          <div class="product-item__rent rent-product-item">
+            <div class="rent-product-item__date">
+              <time datetime="2022-05-22">22.05.2022</time>
+              <span>-</span>
+              <time datetime="2022-05-25">25.05.2022</time>
+            </div>
+            <div class="rent-product-item__day">На 3 дня</div>
+          </div>
+          <div class="product-item__branch">г. Барнаул филиал №1</div>
+          <div class="product-item__price">от 3990₽ / сутки</div>
+          <div class="product-item__total">Всего:
+            <div><span
+                class="discount">11,970₽</span> <span class="current-price">11,371₽</span></div>
+          </div>
+
+          <div class="product-item__controls">
+            <button type="button" class="btn" data-popup="booking">Арендовать</button>
+          </div>
+        </li><li class="booking__item product-item">
+          <div class="product-item__picture"></div>
+          <div class="product-item__info info-product-item">
+            <div class="info-product-item__name">Chevrolet</div>
+            <div class="info-product-item__model">Spark</div>
+          </div>
+          <div class="product-item__rent rent-product-item">
+            <div class="rent-product-item__date">
+              <time datetime="2022-05-22">22.05.2022</time>
+              <span>-</span>
+              <time datetime="2022-05-25">25.05.2022</time>
+            </div>
+            <div class="rent-product-item__day">На 3 дня</div>
+          </div>
+          <div class="product-item__branch">г. Барнаул филиал №1</div>
+          <div class="product-item__price">от 3990₽ / сутки</div>
+          <div class="product-item__total">Всего:
+            <div><span
+                class="discount">11,970₽</span> <span class="current-price">11,371₽</span></div>
+          </div>
+
+          <div class="product-item__controls">
+            <button type="button" class="btn" data-popup="booking">Арендовать</button>
+          </div>
+        </li><li class="booking__item product-item">
+          <div class="product-item__picture"></div>
+          <div class="product-item__info info-product-item">
+            <div class="info-product-item__name">Chevrolet</div>
+            <div class="info-product-item__model">Spark</div>
+          </div>
+          <div class="product-item__rent rent-product-item">
+            <div class="rent-product-item__date">
+              <time datetime="2022-05-22">22.05.2022</time>
+              <span>-</span>
+              <time datetime="2022-05-25">25.05.2022</time>
+            </div>
+            <div class="rent-product-item__day">На 3 дня</div>
+          </div>
+          <div class="product-item__branch">г. Барнаул филиал №1</div>
+          <div class="product-item__price">от 3990₽ / сутки</div>
+          <div class="product-item__total">Всего:
+            <div><span
+                class="discount">11,970₽</span> <span class="current-price">11,371₽</span></div>
+          </div>
+
+          <div class="product-item__controls">
+            <button type="button" class="btn" data-popup="booking">Арендовать</button>
+          </div>
+        </li><li class="booking__item product-item">
+          <div class="product-item__picture"></div>
+          <div class="product-item__info info-product-item">
+            <div class="info-product-item__name">Chevrolet</div>
+            <div class="info-product-item__model">Spark</div>
+          </div>
+          <div class="product-item__rent rent-product-item">
+            <div class="rent-product-item__date">
+              <time datetime="2022-05-22">22.05.2022</time>
+              <span>-</span>
+              <time datetime="2022-05-25">25.05.2022</time>
+            </div>
+            <div class="rent-product-item__day">На 3 дня</div>
+          </div>
+          <div class="product-item__branch">г. Барнаул филиал №1</div>
+          <div class="product-item__price">от 3990₽ / сутки</div>
+          <div class="product-item__total">Всего:
+            <div><span
+                class="discount">11,970₽</span> <span class="current-price">11,371₽</span></div>
+          </div>
+
+          <div class="product-item__controls">
+            <button type="button" class="btn" data-popup="booking">Арендовать</button>
+          </div>
+        </li><li class="booking__item product-item">
+          <div class="product-item__picture"></div>
+          <div class="product-item__info info-product-item">
+            <div class="info-product-item__name">Chevrolet</div>
+            <div class="info-product-item__model">Spark</div>
+          </div>
+          <div class="product-item__rent rent-product-item">
+            <div class="rent-product-item__date">
+              <time datetime="2022-05-22">22.05.2022</time>
+              <span>-</span>
+              <time datetime="2022-05-25">25.05.2022</time>
+            </div>
+            <div class="rent-product-item__day">На 3 дня</div>
+          </div>
+          <div class="product-item__branch">г. Барнаул филиал №1</div>
+          <div class="product-item__price">от 3990₽ / сутки</div>
+          <div class="product-item__total">Всего:
+            <div><span
+                class="discount">11,970₽</span> <span class="current-price">11,371₽</span></div>
+          </div>
+
+          <div class="product-item__controls">
+            <button type="button" class="btn" data-popup="booking">Арендовать</button>
+          </div>
+        </li>`
         </ul>
       </div>
     </div>

@@ -54,7 +54,30 @@
   }
 
   &__price {
+    font-size: 20px;
+  }
+
+  &__total {
     font-size: 25px;
+
+    margin-top: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+
+      .discount {
+        font-size: 15px;
+
+        text-decoration: line-through;
+      }
+    }
   }
 
   &__controls {

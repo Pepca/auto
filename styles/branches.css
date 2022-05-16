@@ -285,7 +285,23 @@
   margin-bottom: 15px;
 }
 .product-item__price {
+  font-size: 20px;
+}
+.product-item__total {
   font-size: 25px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.product-item__total div {
+  display: flex;
+  flex-direction: column;
+}
+.product-item__total div .discount {
+  font-size: 15px;
+  text-decoration: line-through;
 }
 .product-item__controls {
   position: absolute;

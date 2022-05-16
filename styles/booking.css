@@ -35,7 +35,23 @@
   margin-bottom: 15px;
 }
 .product-item__price {
+  font-size: 20px;
+}
+.product-item__total {
   font-size: 25px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.product-item__total div {
+  display: flex;
+  flex-direction: column;
+}
+.product-item__total div .discount {
+  font-size: 15px;
+  text-decoration: line-through;
 }
 .product-item__controls {
   position: absolute;
@@ -197,6 +213,256 @@
   margin-left: 10px;
 }
 
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.popup._popup-open {
+  opacity: 1;
+  visibility: visible;
+}
+.popup__inner {
+  position: relative;
+  padding: 40px 80px;
+  background-color: var(--secondary-dark-color-hsl);
+  border-radius: 12px;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.4);
+  transform: scale(0.8) translateY(50px);
+  transition: transform 0.2s ease;
+}
+._popup-open .popup__inner {
+  transform: scale(1) translateY(0);
+}
+.popup__close {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+}
+.popup__close span {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+.popup__close span:after, .popup__close span:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  transform: translateY(-50%);
+}
+.popup__close span:after {
+  transform: rotate(45deg) translateY(-50%);
+}
+.popup__close span:before {
+  transform: rotate(-45deg) translateY(-50%);
+}
+.popup__title {
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form-popup__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.form-popup__btn {
+  margin-top: 30px;
+  text-align: center;
+}
+.form-popup__btn button {
+  font-size: 25px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.form-popup__btn button:focus {
+  transform: scale(1.1);
+  background-color: white;
+  color: black;
+}
+@media screen and (min-width: 991.98px) {
+  .form-popup__btn button:hover {
+    transform: scale(1.1);
+    background-color: white;
+    color: black;
+  }
+}
+
+.content-popup__list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.input-block__title {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.input-block__list {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.input-block__item {
+  position: relative;
+}
+.input-block__icon {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  width: 70px;
+  height: 100%;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input-block__label {
+  pointer-events: none;
+  color: black;
+  white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  left: 21px;
+  font-size: 20px;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -50%);
+  transition: transform 0.15s ease, opacity 0.18s ease, visibility 0.18s ease;
+}
+._typing .input-block__label {
+  transform: translate(20px, -50%);
+  opacity: 0;
+  visibility: hidden;
+}
+._with-icon .input-block__label {
+  left: 70px;
+}
+.input-block__target {
+  font-size: 25px;
+  padding: 10px 20px;
+  border-radius: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+._with-icon .input-block__target {
+  padding-left: 70px;
+}
+.input-block__target:focus {
+  outline: none;
+  background-color: white;
+}
+
+.custom-select-input {
+  color: black;
+  font-size: 30px;
+}
+.custom-select-input input {
+  display: none;
+}
+.custom-select-input__icon {
+  transition: transform 0.3s ease;
+}
+._expend-select .custom-select-input__icon {
+  transform: rotate(180deg);
+}
+.custom-select-input__head {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border-radius: 40px;
+  transition: border-radius 0.3s ease, background-color 0.3s ease;
+}
+.custom-select-input__head:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+._expend-select .custom-select-input__head {
+  background-color: white;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+._expend-select .custom-select-input__head:after {
+  transform: scale(1);
+}
+
+.options-custom-select {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  min-width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px);
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.3s ease;
+}
+._expend-select .options-custom-select {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.options-custom-select__list {
+  background-color: white;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  max-height: 305px;
+  overflow: auto;
+}
+.options-custom-select__list::-webkit-scrollbar {
+  width: 0;
+}
+.options-custom-select__item {
+  cursor: pointer;
+  text-align: center;
+  padding: 10px 0;
+  transition: background-color 0.3s ease;
+}
+.options-custom-select__item:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+@media screen and (min-width: 991.98px) {
+  .options-custom-select__item:hover {
+    background-color: hsl(var(--base-default-color), 90%);
+  }
+}
+
 .booking {
   margin: 100px 0;
 }
@@ -214,6 +480,16 @@
   height: 100%;
   position: sticky;
   top: 100px;
+}
+
+.item-popup-form {
+  width: 400px;
+}
+.item-popup-form .input-block__label {
+  font-size: 25px;
+}
+.item-popup-form .input-block__target {
+  font-size: 30px;
 }
 
 /*# sourceMappingURL=booking.css.map */
